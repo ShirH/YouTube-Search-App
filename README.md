@@ -11,4 +11,4 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 
 ####Screenshot####
 
-![Screenshot](screenshot.png)
+![Screenshot](Capture.PNG)

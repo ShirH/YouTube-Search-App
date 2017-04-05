@@ -4,14 +4,19 @@ class VideoSearch extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {content: ""};
+        this.state = {term: ""};
     }
 
     render() {
         return (
-            <input
-                value={this.state.content}
-                onChange={(event) => {this.setState({content: event.target.value}); }}/>
+            <div className="serch-video">
+                <input
+                    value={this.state.term}
+                    onChange={(event) => {
+                    this.setState({term: event.target.value});
+                    this.props.onSearchBarClick(event.target.value);
+                     }}/>
+            </div>
         );
     }
 }

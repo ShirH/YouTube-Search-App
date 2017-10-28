@@ -4,8 +4,7 @@ const videoDetails = ({video})=> {
     if (!video) {
         return (<div>loading...</div>);
     }
-
-    const videoUrl = `https://www.youtube.com/embed/${video.id.videoId}`;
+    const videoUrl = `https://www.youtube.com/embed/${video.id.videoId || 'videoseries?list='+video.id}`;
     return (
         <div className="video-detail col-md-8">
             <div className="embed-responsive embed-responsive-16by9">
@@ -17,6 +16,6 @@ const videoDetails = ({video})=> {
             </div>
         </div>
     );
-}
+};
 
 export default videoDetails;

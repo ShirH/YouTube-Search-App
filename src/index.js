@@ -6,7 +6,7 @@ import VideoDetails from './components/video_detailes';
 import YTSearch from 'youtube-api-search'
 import _ from 'lodash'
 
-const KEY = 'AIzaSyAQAoXWGYFHgnrbxy9F8digGtK9wLeoqOA';
+export const KEY = 'AIzaSyAQAoXWGYFHgnrbxy9F8digGtK9wLeoqOA';
 
 
 class App extends Component {
@@ -35,12 +35,12 @@ class App extends Component {
 
         const videoSerch = _.debounce((term) => {
             this.videoSearch({term})
-        }, 300)
+        }, 300);
         return (
             <div>
                 <VideoSearch onSearchBarClick={videoSerch}/>
                 <VideoDetails video={this.state.selectedVideo}/>
-                <VideosList videos={this.state.videos} onVideoSelect={selectedVideo => this.setState({selectedVideo})}/>
+                <VideosList videos={this.state.videos} selectedVideo={this.state.selectedVideo} onVideoSelect={selectedVideo => this.setState({selectedVideo})} />
             </div>
         );
     }
